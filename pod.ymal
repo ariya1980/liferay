@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: liferay
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: liferay
+    spec:
+      containers:
+      - name: liferay
+        image: ariyak/myliferay:1.0.0
+        ports:
+        - containerPort: 8080
